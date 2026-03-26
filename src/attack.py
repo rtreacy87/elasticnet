@@ -172,7 +172,7 @@ class ElasticNetAttack:
             self.config.beta,
         )
         linf_dist = torch.max(
-            torch.abs(best_adv - original_images).view(best_adv.size(0), -1),
+            torch.abs(best_adv - original_images).reshape(best_adv.size(0), -1),
             dim=1,
         )[0]
 
